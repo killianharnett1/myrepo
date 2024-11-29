@@ -165,3 +165,11 @@ cov_matrix <- solve(optim_result$hessian)
 std_errors <- sqrt(diag(cov_matrix))
 names(std_errors) <- c("Intercept", colnames(df)[2:ncol(df)], "Sigma")
 std_errors
+
+#Q3.4
+lm_fit <- lm(y ~ x1 + x2 +x3, data=df)
+lm_coefficients <- coef(lm_fit)
+lm_sigma <- summary(lm_fit)$sigma
+
+lm_coefficients
+lm_sigma
